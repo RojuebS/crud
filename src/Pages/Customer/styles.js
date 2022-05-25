@@ -11,6 +11,21 @@ export const ContentCustormer = styled.div`
   }
 `;
 
+export const SubTitle = styled.p`
+  display: flex;
+  font-size: 22px;
+  flex-wrap: wrap;
+  color: #686e76;
+  margin-top: 20px;
+
+  span {
+    width: 100%;
+    font-size: 16px;
+    color: #444444;
+    margin-top: 15px;
+  }
+`
+
 export const TitleCustomer = styled.h2`
   display: flex;
   align-items: center;
@@ -19,7 +34,7 @@ export const TitleCustomer = styled.h2`
   border-bottom: 1px solid #ccc;
   color: #777777;
   padding-bottom: 10px;
-
+  
   img {
     margin-right: 15px;
   }
@@ -28,4 +43,14 @@ export const TitleCustomer = styled.h2`
 export const Container = styled.div`
   width: 1140px;
   margin: 0 auto;
+`
+
+export const ContentSubTitleAndButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+
+export const ContentList = styled.div`
+  // border: 1px solid red;
 `
