@@ -1,10 +1,10 @@
 import * as S from "./styles";
 
-const Status = () => {
+const Status = ({ status }) => {
   return (
     <S.ContentStatus>
-      <S.Status />
-      Ativo
+      <S.Status background={status.background} />
+      {status.name}
     </S.ContentStatus>
   );
 }
