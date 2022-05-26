@@ -10,10 +10,9 @@ export const LightBox = (props) => {
       <S.ContainerBox>
         <S.Box active={active}>
           <S.Closed>
-
+            Fechar
           </S.Closed>
           {children}
-          dasdsadas
         </S.Box>
       </S.ContainerBox>
     </>

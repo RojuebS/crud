@@ -1,9 +1,26 @@
-import React, { createContext, useEffect, useReducer } from "react";
+import React, { createContext, useReducer } from "react";
 import appReducer from "./AppReducer";
-import axios from "axios";
 
 const initialContext = {
-  currentCustomer: "",
+  currentCustomer: null,
+  status: {
+    "active": {
+      name: "Ativo",
+      background: "#4aad5b"
+    },
+    "disabled": {
+      name: "Desativado",
+      background: "#d2d2d2"
+    },
+    "inactive": {
+      name: "Inativo",
+      background: "#d7323f"
+    },
+    "waiting": {
+      name: "Aguardando ativação",
+      background: "#d3a710"
+    },
+  },
   listClients: {
     loading: true,
     list: {
@@ -50,24 +67,24 @@ const AppProvider = ({ children }) => {
     dispatch({ payload: customer, action: "currentCustomer" });
   }
 
-  const getClients = () => {
+  // const getClients = () => {
 
-    axios.get("https://reqres.in/api/products/3", {
-      withCredentials: false,
-    }).then(res => {
-      console.log(res, "dsadasdasd")
-    })
-  }
+  //   axios.get("https://reqres.in/api/products/3", {
+  //     withCredentials: false,
+  //   }).then(res => {
+  //     console.log(res, "dsadasdasd")
+  //   })
+  // }
 
-  useEffect(() => {
-    getClients()
-  }, [])
+  // useEffect(() => {
+  //   getClients()
+  // }, [])
 
   return (
     <AppContext.Provider
       value={{
         ...state,
-        getClients,
+        // getClients,
         setCurrentCustomer
       }}
     >

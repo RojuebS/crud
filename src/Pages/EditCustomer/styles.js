@@ -5,9 +5,9 @@ export const ContentCustormer = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-
-  @media screen and (max-width: 330px) {
-    // border: 1px solid red;
+  
+  @media screen and (max-width: 767px) {
+    padding: 0 20px;
   }
 `;
 
@@ -35,6 +35,7 @@ export const TitleCustomer = styled.h2`
   color: #777777;
   padding-bottom: 10px;
 
+
   img {
     margin-right: 15px;
   }
@@ -53,20 +54,14 @@ export const TitleCustomer = styled.h2`
 export const Container = styled.div`
   width: 1140px;
   margin: 0 auto;
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `
 
 export const ContentSubTitleAndButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  @media (max-width: 767px) {
-    flex-wrap: wrap;
-    padding: 0 30px;
-    margin-bottom: 30px;
-  }
-`
-
-export const ContentList = styled.div`
-  // border: 1px solid red;
 `

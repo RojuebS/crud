@@ -1,9 +1,9 @@
 import * as S from "./styles";
 
-export const Button = ({ name, active }) => {
+export const Button = ({ name, active, handleClick = () => { } }) => {
 
   return (
-    <S.Button active={active}>{name}</S.Button>
+    <S.Button onClick={handleClick} active={active}>{name}</S.Button>
   )
 }
 

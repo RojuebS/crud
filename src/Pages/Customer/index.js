@@ -1,22 +1,18 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import * as S from "./styles";
-import Header from "../../Components/Header/index"
 import IcoUser from "../../assets/ico-user.png"
 import Button from "../../Components/Button/index"
 import List from "./components/List/index"
 import AppContext from '../../context/AppContext';
-import LightBox from '../../Components/LightBox';
 
 export const Customer = () => {
 
   const context = useContext(AppContext)
-  const [stateBox, setStateBox] = useState(false)
 
   const list = context.listClients.list.customers;
 
   return (
     <S.ContentCustormer>
-      <Header />
       <S.Container>
         <S.TitleCustomer>
           <img src={IcoUser} alt="Painel de clientes" /> Painel de clientes
@@ -35,15 +31,15 @@ export const Customer = () => {
         <S.ContentList>
           {list.map((data, index) => {
             return (
-              <List key={index} data={data} toggleBox={() => setStateBox(!stateBox)} />
+              <List key={index} data={data} />
             )
           })}
 
         </S.ContentList>
 
-        {stateBox && (
+        {/* {stateBox && (
           <LightBox active={stateBox} />
-        )}
+        )} */}
 
       </S.Container>
     </S.ContentCustormer>

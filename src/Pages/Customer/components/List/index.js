@@ -3,37 +3,19 @@ import Button from '../../../../Components/Button';
 import Status from '../../../../Components/Status';
 import * as S from "./styles";
 import AppContext from '../../../../context/AppContext';
+import { useNavigate } from "react-router-dom";
 
 export const List = (props) => {
 
-  const { data, toggleBox } = props
+  const { data } = props
   const { name, email, cpf = "123.456.789-03", phone, status } = data
 
   const context = useContext(AppContext)
+  const history = useNavigate();
 
   const openBox = () => {
     context.setCurrentCustomer(data)
-    toggleBox()
-  }
-
-
-  const setStatus = {
-    "active": {
-      name: "Ativo",
-      background: "#4aad5b"
-    },
-    "disabled": {
-      name: "Desativado",
-      background: "#d2d2d2"
-    },
-    "inactive": {
-      name: "Inativo",
-      background: "#d7323f"
-    },
-    "waiting": {
-      name: "Aguardando ativação",
-      background: "#d3a710"
-    },
+    history("/editar-pedido")
   }
 
   return (
@@ -49,7 +31,7 @@ export const List = (props) => {
       </S.CpfAndTel>
 
       <S.ContentStatus>
-        <Status status={setStatus[status]} />
+        <Status status={context.status[status]} />
       </S.ContentStatus>
 
       <S.Button onClick={() => openBox()}>

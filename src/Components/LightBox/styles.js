@@ -22,6 +22,9 @@ export const Closed = styled.div`
   right: 10px;
   font-size: 20px;
   color: #444;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
 `
 
 export const ContainerBox = styled.div`
@@ -33,13 +36,12 @@ export const ContainerBox = styled.div`
   align-items: center;
   position: fixed;
   z-index: 11;
-  border: 1px solid red;
   left: 0;
 `
 
 export const Box = styled.div`
-  width: 768px;
-  height: 400px;
+  width: 500px;
+  height: 200px;
   // max-height: 90vh;
   background: #ffffff;
   position: relative;

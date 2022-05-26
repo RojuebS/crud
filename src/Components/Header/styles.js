@@ -6,6 +6,10 @@ export const Header = styled.div`
   background: #333333;
   padding: 20px 0;
   margin-bottom: 50px;
+
+  @media (max-width: 767px) {
+    margin-bottom: 10px;
+  }
 `
 
 export const Container = styled.div`
